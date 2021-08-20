@@ -7,4 +7,4 @@ foreach($dos as $k):?>
             <div class="product-price"><?=$k['price']?></div>
         </div>
 	</div>	
-<?endforeach;?>
+<?php endforeach;?>
