@@ -1,7 +1,7 @@
 <div id='carzin'>
 <h2>Ваш заказ:</h2>
 <?php
-if($_SESSION['cart']) {
+if ($_SESSION['cart']) {
 ?>	
 <form action='index.php?view=update_cart' method='post' >
 		<?php
