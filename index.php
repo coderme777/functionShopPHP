@@ -2,7 +2,7 @@
 	require_once('fs_db.php');
 	require_once('cart_func.php');//выносим функции для работы корзины в отдельный файл
 	session_start(); //добавим работу корзины через сессии
-	if(!isset($_SESSION['cart'])) {
+	if (!isset($_SESSION['cart'])) {
 		$_SESSION['cart']=array();
 		$_SESSION['total_product']=0;
 		$_SESSION['total_sum']='0.00';
@@ -13,40 +13,40 @@
 		case('index'):
 			$cat=$_GET['id'];
 			$dos=getdata_db();
-		break;
+			break;
 		case('cart'):
 			echo'';
-		break;
+			break;
 		case('cat'):
 			$cat=$_GET['id'];
 			$dos=get_categories($cat);
-		break;
+			break;
 		case('product'):
 			$id=$_GET['id'];
 			$product=getproduct($id);
-		break;
+			break;
 		case('add_cart'):
 			$id=$_GET['id'];
 			$add_item=add_cart($id);
 			$_SESSION['total_product']=total_prod($_SESSION['cart']);
 			$_SESSION['total_price']=total_price($_SESSION['cart']);
 			header('Location: index.php?view=product&id='.$id);//чтобы остаться на странице после добавления товара делаем перенаправление
-		break;
+			break;
 		case('update_cart'):
 			$id=$_GET['id'];
 			update_cart();
 			$_SESSION['total_product']=total_prod($_SESSION['cart']);
 			$_SESSION['total_price']=total_price($_SESSION['cart']);
 			header('Location: index.php?view=cart');//чтобы остаться на странице после изменения характеристик товара делаем перенаправление
-		break;
+			break;
 		case('order'):
 		
-		break;
+			break;
 		default:
 			echo "Нет такой страницы: ";
 	}
 	
 	$secur = array('index','product','cat','cart','add_cart','update_cart','order');//делаю простою защиту адресной строки от ввода лишнего
-	if(!in_array($view,$secur)) die('404');	
+	if (!in_array($view,$secur)) die('404');	
 	require_once($_SERVER['DOCUMENT_ROOT'].'/layouts/shop.php');
 ?>
