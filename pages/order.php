@@ -2,7 +2,7 @@
 <div id='carzin'>
 	<h2>Оформление заказа</h2>
 	<?php
-	if($_SESSION['cart'] && !isset($_POST['order'])) {//если существует что-то в корзине и кнопка формы не нажата, то выводим данные ниже
+	if ($_SESSION['cart'] && !isset($_POST['order'])) {//если существует что-то в корзине и кнопка формы не нажата, то выводим данные ниже
 	?>	
 	<form action='index.php?view=order' method='post' >
 			<?php
@@ -25,7 +25,7 @@
 	</form>
 </div>
 <?php } else {
-		if($_SESSION['cart'] && isset($_POST['order'])) {
+		if ($_SESSION['cart'] && isset($_POST['order'])) {
 			$date = date('Y-m-d');
 			$time = date('H:i:s');
 			$name = htmlspecialchars($_POST['name']);
