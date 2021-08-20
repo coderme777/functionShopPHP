@@ -15,4 +15,4 @@
 	<div style="clear: both;"></div>
 	<div class=""></div>
 </div>
-<?endforeach;?>	
+<?php endforeach;?>	
