@@ -2,16 +2,14 @@
 	require_once('fs_db.php');
 	require_once('cart_func.php');//выносим функции для работы корзины в отдельный файл
 	session_start(); //добавим работу корзины через сессии
-	if(!isset($_SESSION['cart']))
-	{
+	if(!isset($_SESSION['cart'])) {
 		$_SESSION['cart']=array();
 		$_SESSION['total_product']=0;
 		$_SESSION['total_sum']='0.00';
 	}
-	
+
 	$view = empty($_GET['view']) ? 'index' : $_GET['view']; //если эл. массива пустой, то =index, иначе сохраняем то, что лежит в глоб.массиве $_GET['view']
-	switch($view)//берем инфу из массива get (какая страница актуальна сейчас), затем из switch запускаем соответствующую странице функцию
-	{
+	switch($view) {//берем инфу из массива get (какая страница актуальна сейчас), затем из switch запускаем соответствующую странице функцию
 		case('index'):
 			$cat=$_GET['id'];
 			$dos=getdata_db();
