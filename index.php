@@ -2,7 +2,8 @@
 	require_once('fs_db.php');
 	require_once('cart_func.php');//выносим функции для работы корзины в отдельный файл
 	session_start(); //добавим работу корзины через сессии
-	if(!isset($_SESSION['cart'])){
+	if(!isset($_SESSION['cart']))
+	{
 		$_SESSION['cart']=array();
 		$_SESSION['total_product']=0;
 		$_SESSION['total_sum']='0.00';
