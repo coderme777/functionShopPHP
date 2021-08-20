@@ -18,7 +18,7 @@
 					foreach($cat as $k):
 				?>
 				<div><a href="index.php?view=cat&id=<?=$k['cat_id']?>"><?=$k['name']?></a></div>
-				<?endforeach;?>
+				<?php endforeach;?>
 				<div id="cart"><a href="index.php?view=cart">Корзина:</a> (<?=$_SESSION['total_product']?>шт.) - <?=number_format($_SESSION['total_price'],2)?>$</div>
 			</div>
 			
