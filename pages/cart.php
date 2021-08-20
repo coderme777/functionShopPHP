@@ -14,7 +14,7 @@ if($_SESSION['cart'])
 	<p>Цена: <?=number_format($prod[0]['price'],2)?>$</p>
 	<p>Кол-во: <input type='text' size='2' name='<?=$id?>' maxlength='2' value='<?=$quant?>'></p>
 	<p>Всего: <?=number_format($prod[0]['price']*$quant,2)?>$</p>
-<?endforeach;?>
+<?php endforeach;?>
 	<p class='total'>Общая сумма заказа: <span class='product-price'><?=number_format($_SESSION['total_price'],2)?>$</span></p>
 	<p><input type='submit' name='update' value='Обновить'></p>
 </form>
